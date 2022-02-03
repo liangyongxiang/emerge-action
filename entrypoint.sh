@@ -2,6 +2,13 @@
 
 set -xeuo pipefail
 
+echo "::group::check packages"
+if [ -z ${INPUT_PACKAGES} ]; then
+    exit 0
+else
+    echo "emerge ${INPUT_PACKAGES}"
+fi
+echo "::endgroup::"
 
 echo "::group::update make.conf"
 cat <<EOT >> /etc/portage/make.conf
