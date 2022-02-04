@@ -39,8 +39,9 @@ echo "::endgroup::"
 
 echo "::group::install"
 for pkg in ${INPUT_PACKAGES}; do
-    keywords=$(equery meta "$pkg::$repo_name" | grep 'Keywords:')
+    keywords=$(equery --no-color meta "$pkg::$repo_name" | grep 'Keywords:')
     if [[ "$keywords" != *"amd64"* ]]; then
+        echo "$pkg::$repo_name is live package"
         echo "$pkg::$repo_name **" >> /etc/portage/package.accept_keywords/$(basename $pkg)
     fi
 done

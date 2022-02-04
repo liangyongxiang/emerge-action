@@ -7,7 +7,7 @@ inputs:
   emerge_default_opts:
     description: 'defalut emerge opts'
     required: false
-    default: '--verbose --autounmask-continue'
+    default: '--newuse --deep --verbose --autounmask-continue'
   portage_tmpdir:
     description: 'global portage tmpdir'
     default: '/tmp'
