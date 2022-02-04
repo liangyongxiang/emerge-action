@@ -4,17 +4,6 @@ inputs:
   packages:
     description: 'packages that need to be compiled'
     required: true
-  overlay_name:
-    description: 'overlay name'
-    required: false
-  # TODO: support more sync type
-  overlay_sync_type:
-    description: 'overlay sync type'
-    default: 'git'
-    required: false
-  overlay_sync_uri:
-    description: 'overlay sync uri'
-    required: false
   emerge_default_opts:
     description: 'defalut emerge opts'
     required: false
